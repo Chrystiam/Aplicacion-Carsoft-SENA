@@ -1,11 +1,29 @@
+<%= javascript_include_tag "fecha" %>
+
 <%= simple_form_for(@turn, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
     <%= f.error_notification %>
     <%= display_base_errors @turn %>
     <p><%= f.input :day, :label => "Jornada",  :required => true   %></p>
     <p><%= f.input :start_time, :label => "	Hora",  :required => true  %></p>
     <p><%= f.input :finish_time, :label => "	Hora",  :required => true  %></p>
-    <p><%= f.input :start_date, :label => "Fecha",  :required => true    %><p>
-    <p><%= f.input :finish_date, :label => "Fecha",  :required => true    %><p>
+    <div class="control-group">
+        <label class="control-label" for="inputName">Fch Radicación Demanda</label>
+        <div class="controls">
+            <div class="input-append date">
+                <%= f.input :start_date, :as => :string, :label => false, :input_html => {  :class=>"datepicker" } %>
+            </div>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="inputName">Fch Radicación Demanda</label>
+        <div class="controls">
+            <div class="input-append date">
+                <%= f.input :finish_date, :as => :string, :label => false, :input_html => {  :class=>"datepicker" } %>
+            </div>
+        </div>
+    </div>
+
  
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>

@@ -25,6 +25,8 @@ gem 'mime-types', :require => 'mime/types'
 gem 'rails3-jquery-autocomplete'
 gem "less-rails"
 gem 'remotipart'
+  gem 'bootstrap-datepicker-rails'
+
 
 group :development do
   gem "better_errors"

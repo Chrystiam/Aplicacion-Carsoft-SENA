@@ -33,6 +33,8 @@ GEM
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bootstrap-datepicker-rails (1.1.0.1)
+      railties (>= 3.0)
     bootstrap-will_paginate (0.0.9)
       will_paginate
     builder (3.0.4)
@@ -170,6 +172,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  bootstrap-datepicker-rails
   bootstrap-will_paginate
   cancan
   coffee-rails (~> 3.2.2)

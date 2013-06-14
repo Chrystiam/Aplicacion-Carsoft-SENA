@@ -11,6 +11,7 @@
     <%= f.collection_select :turn_id, Turn.all, :id, :day, :prompt => "Seleccionar Turno" %></p>
     <p><%= f.label :avatar %>
     <%= f.file_field :avatar %></p>
+    
 
     <div class="form-actions">
       <%= f.submit "guardar", :class => 'btn btn-primary' %>
