@@ -3,3 +3,4 @@ class AreaCenter < ActiveRecord::Base
   belongs_to :responsible
   attr_accessible :extension, :name, :phone, :specification, :center_id,  :responsible_id
 end
+ 

@@ -8,4 +8,4 @@ class Team < ActiveRecord::Base
   def self.search(search)
 		where("color  like '%#{search}%' or name like '%#{search}%' or serial like '%#{search}%'")
 	end
-end
+end 

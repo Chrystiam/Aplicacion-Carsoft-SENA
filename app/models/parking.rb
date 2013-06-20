@@ -7,3 +7,4 @@ class Parking < ActiveRecord::Base
 		where("description like '%#{search}%' or location like '%#{search}%' or space_avaible like '%#{search}%'")
 	end
 end
+  

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  authenticates_with_sorcery!
+  authenticates_with_sorcery! 
   
   has_many :assignments
   has_many :roles, :through => :assignments
@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
 
   
   attr_accessible :email, :password, :password_confirmation
-  attr_accessible :address_residence, :gender
-  attr_accessible :identification, :movil, :name, :phone, :avatar
+  attr_accessible :address_residence, :gender, :avatar
+  attr_accessible :identification, :movil, :name, :phone, :avatar_file_name
   attr_accessible :document_id, :rh_id, :role_ids, :type_user_id, :role_id
   
 
@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
     thumb: '100x100>',
     square: '200x200#',
     medium: '300x300>'
-  }
+  } 
 
 
   validates_confirmation_of :password

@@ -12,3 +12,4 @@ class CreatePorters < ActiveRecord::Migration
     add_index :porters, :turn_id
   end
 end
+ 

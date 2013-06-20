@@ -6,10 +6,15 @@ class RecordsController < ApplicationController
     end
     @records = Record.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
+  output = RecordList.new(@records,view_context) # Aquí instancio el documento pdf
     respond_to do |format|
-      format.html 
-      format.json { render json: @records }
+      format.pdf{
+      send_data output.render, :filename => "recordslist.pdf", :type => "application/pdf", :disposition => "inline" # este parámetro permite ver el documento pdf en
+        }
+      format.html #{ render :text => "<h1>Use .pdf</h1>".html_safe }
+      format.json { render json: @records  }
     end
+  
   end
 
   def show

@@ -6,3 +6,4 @@ class Material < ActiveRecord::Base
 		where("description like '%#{search}%' or name like '%#{search}%'")
 	end
 end
+ 

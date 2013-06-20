@@ -9,3 +9,4 @@ class Suggestion < ActiveRecord::Base
 			or phone like '%#{search}%' or surname like '%#{search}%' or movil like '%#{search}%'")
   end
 end
+  

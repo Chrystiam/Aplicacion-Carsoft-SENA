@@ -3,19 +3,16 @@
     <td><%= record.date %></td>
     <td><%= record.time %></td>
     <td><%= record.amount %></td>
-    <td><%= record.movements %></td>
-    <td><%= record.destination %></td>
     <td><%= record.provenance %></td>
-    <td><%= record.center_id %></td>
-    <td><%= record.vehicle_id  %></td>
-    <td><%= record.porter_id %></td>
-    <td><%= record.material_id %></td>
-    <td><%= record.user_id  %></td>
-    <td><%= record.team_id  %></td>
+    <td><%= record.destination %></td>
+    <td><%= record.center.name %></td>
+    <td><%= record.vehicle.plate  %></td>
+    <td><%= record.porter.name %></td>
+    <td><%= record.material.name %></td>
+    <td><%= record.user.name  %></td>
+    <td><%= record.team.name  %></td>
     <td>
         <%= link_to  image_tag('mostrar.png'), record, :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_record_path(record),  :remote => true, :class => 'btn btn-mini'%>
-        <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), record, :data => { :confirm => 'Esta Seguro?' },
-          :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
     </td>
 </tr>

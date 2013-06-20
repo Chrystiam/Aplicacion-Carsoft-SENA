@@ -7,11 +7,18 @@ class ParkingsController < ApplicationController
     
     @parkings = Parking.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
+
+    output = ParkingList.new(@parkings,view_context) # Aquí instancio el documento pdf
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @parkings }
+      format.pdf{
+      send_data output.render, :filename => "parkingslist.pdf", :type => "application/pdf", :disposition => "inline" # este parámetro permite ver el documento pdf en
+        }
+      format.html #{ render :text => "<h1>Use .pdf</h1>".html_safe }
+      format.json { render json: @parkings  }
     end
+  
   end
+
 
   def show
       @parking = Parking.find(params[:id])

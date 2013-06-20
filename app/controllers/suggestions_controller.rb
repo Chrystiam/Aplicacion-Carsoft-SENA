@@ -6,10 +6,16 @@ class SuggestionsController < ApplicationController
     end
     @suggestions = Suggestion.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
+    
+  output = SuggestionList.new(@suggestions,view_context) # Aquí instancio el documento pdf
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @suggestions }
+      format.pdf{
+      send_data output.render, :filename => "suggestionslist.pdf", :type => "application/pdf", :disposition => "inline" # este parámetro permite ver el documento pdf en
+        }
+      format.html #{ render :text => "<h1>Use .pdf</h1>".html_safe }
+      format.json { render json: @suggestions  }
     end
+  
   end
 
   def show

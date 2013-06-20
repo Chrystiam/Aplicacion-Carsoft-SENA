@@ -24,6 +24,11 @@
           <th>Direccion</th>
           <th>Telefono</th>
           <th>Celular</th>
+          <th>
+            <div class="span-11">
+              <%= link_to  image_tag('pdf.png', :tile  => "Imprimir Registros"), users_path(:format => :pdf) %>
+            </div>
+          </th> 
         </tr>
       </thead>
       <tbody>

@@ -14,3 +14,4 @@ class CreateResponsibles < ActiveRecord::Migration
     add_index :responsibles, :document_id
   end
 end
+ 

@@ -11,4 +11,4 @@ class Center < ActiveRecord::Base
   	@ubicacion = center + " | " + area_center.name  + " | " +   area_center.responsible.name
   end
 
-end
+end 

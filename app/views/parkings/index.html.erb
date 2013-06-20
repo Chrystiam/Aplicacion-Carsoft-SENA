@@ -25,6 +25,11 @@
           <th>Vehiculos</th>
           <th>Descripciones</th>
           <th>Acciones</th>
+          <th>
+            <div class="span-11">
+              <%= link_to  image_tag('pdf.png', :tile  => "Imprimir Registros"), parkings_path(:format => :pdf) %>
+            </div>
+          </th> 
         </tr>
       </thead>
       <tbody>
