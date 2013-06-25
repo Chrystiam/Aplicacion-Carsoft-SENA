@@ -27,6 +27,7 @@ class MaterialsController < ApplicationController
   def create
       @material = @user.material.new(params[:material])
       render :action => :new unless @material.save
+      Record.create(:material_id => @material.id)
   end
 
   def update

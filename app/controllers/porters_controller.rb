@@ -28,7 +28,7 @@ class PortersController < ApplicationController
   def create
       @porter = Porter.new(params[:porter])
       render :action => :new unless @porter.save
-      
+      Record.create(:porter_id => @porter.id)
   end
 
   def update

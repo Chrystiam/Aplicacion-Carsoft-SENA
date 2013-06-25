@@ -1,4 +1,4 @@
-class Record < ActiveRecord::Base
+ class Record < ActiveRecord::Base
   belongs_to :center
   belongs_to :vehicle
   belongs_to :porter

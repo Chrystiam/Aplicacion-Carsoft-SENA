@@ -9,7 +9,5 @@
         <%= link_to  image_tag('mostrar.png'), turn,     :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_turn_path(turn),  :remote => true,
           :class => 'btn btn-mini'%>
-        <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), turn, :data => { :confirm => 'Esta Seguro?' },
-          :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
     </td>
 </tr>

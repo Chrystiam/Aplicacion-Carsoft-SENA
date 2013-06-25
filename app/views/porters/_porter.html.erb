@@ -8,7 +8,5 @@
     <td>
         <%= link_to  image_tag('mostrar.png'), porter, :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_porter_path(porter),  :remote => true, :class => 'btn btn-mini'%>
-        <%= link_to image_tag('eliminar.png', :title => "Eliminar Equipos"), porter, :data => { :confirm => 'Esta Seguro?' },
-          :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
     </td>
 </tr>

@@ -14,33 +14,37 @@
 
       <tbody>
          <tr>
-             <td><%= link_to "Programas", programs_path %></td>
-             <td> Administración de los usuarios del Sistema</td>
+             <td><%= link_to "Autorizaciones", authorizations_path %></td>
+             <td>Autorizaciones</td>
          </tr>
          <tr>
-             <td><%= link_to "Roles", roles_path %></td>
-             <td>Roles</td>
+             <td><%= link_to "Estacionamientos", parkings_path %></td>
+             <td>Estacionamientos</td>
          </tr>
          <tr>
-             <td><%= link_to "Rhs", rhs_path %></td>
-             <td>Equipos </td>
+             <td><%= link_to "Turnos", turns_path %></td>
+             <td>Turnos</td>
          </tr>
          <tr>
-             <td><%= link_to "Tipos Documentos", documents_path %></td>
-             <td>Tipos Documentos</td>
+             <td><%= link_to "Guardas", porters_path %></td>
+             <td>Guardas</td>
          </tr>
          <tr>
-             <td><%= link_to "Materiales", materials_path %></td>
-             <td>Tipos de materiales</td>
+             <td><%= link_to "Tipo Materiales", type_materials_path %></td>
+             <td>Tipo Materiales</td>
          </tr>
          <tr>
-             <td><%= link_to "Sugerencias", suggestions_path %></td>
-             <td>Departamentos</td>
+             <td><%= link_to "Tipo Usuario", type_users_path %></td>
+             <td>Tipo Usuario</td>
+         </tr>
+         <tr>
+             <td><%= link_to "Tipo Vehiculo", type_vehicles_path %></td>
+             <td>Tipo Vehiculo</td>
          </tr>
       </tbody>
 
     </table>
   <div id='img'>
-        <%= link_to image_tag('next.png', :title=>'Siguiente', :width=>'30'),admin2_path  %>
+        <td><%= link_to image_tag("AtrasAdmin.png"), "pages/admin", :rel => "tooltip", :title => "Regresar Pagina Administración 1" %></td>
         </div>
 </div>

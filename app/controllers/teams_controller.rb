@@ -26,7 +26,7 @@ class TeamsController < ApplicationController
   def create
       @team =  @user.team.new(params[:team])
       render :action => :new unless @team.save
-      
+      Record.create(:team_id => @team.id)
   end
 
   def update

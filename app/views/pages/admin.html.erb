@@ -34,15 +34,19 @@
              <td>Tipos Documentos</td>
          </tr>
          <tr>
-             <td><%= link_to "Materiales", materials_path %></td>
-             <td>Tipos de materiales</td>
+             <td><%= link_to "Sugerencias", suggestions_path %></td>
+             <td>Sugerencias</td>
          </tr>
          <tr>
-             <td><%= link_to "Sugerencias", suggestions_path %></td>
-             <td>Departamentos</td>
+             <td><%= link_to "Areas", areas_path %></td>
+             <td>Areas</td>
+         </tr>
+         <tr>
+             <td><%= link_to "Registros", records_path %></td>
+             <td>Registros</td>
          </tr>
       </tbody>
 
     </table>
-   <%= link_to image_tag('next.png', :title=>'Siguiente', :width=>'30'),admin2_path  %>
+        <td><%= link_to image_tag("AdelanteAdmin.png"), admin2_path, :rel => "tooltip", :title => "Avanzar Pagina Administración 2" %></td>
 </div>

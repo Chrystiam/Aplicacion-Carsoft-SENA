@@ -28,6 +28,7 @@ class CentersController < ApplicationController
       @center = Center.new(params[:center])
       @center.name = Center.center_ubicacion(@center.name, @area_center)
       render :action => :new unless @center.save
+      Record.create(:center_id => @center.id)
   end
 
   def update

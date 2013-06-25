@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(params[:user])
         render :action => :new unless @user.save
+        Record.create(:user_id => @user.id)
     end 
     
     def show
