@@ -1,21 +1,28 @@
-<%- model_class = Rh -%>
-	<div class="page-header">
-  		<h1>Rhs</h1>
-		<table class="table table-bordered table-hover" >
-	    	<caption>
-	    		<h3>Informacion</h3>
-	    	</caption>
-	    	<thead>
-	    		<tr class="success">
-	    			<th>Id</th>
-	    			<th>Nombres</th>
-	    		</tr>
-	    	</thead>
-	    	<tbody>
-	    		<tr class="warning">
-				    <td><p><%= @rh.id %></p></td>
-				    <td><p><%= @rh.name %></p></td>   
-	    		</tr>
-	    	</tbody>
-	    </table>
-	</div>
+<div class="responsive">
+
+    <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+         <h3>Datos 	Rhs </h3>
+    </div>
+
+    <div class="modal-body">
+
+        <p id="notice"><%= notice %></p>
+
+        <table class="table table-striped table-condensed">
+            <tr>
+               <td><b class="pull-right">ID: </b></td>
+               <td><%=  @rh.id  %></td>
+               <td><b class="pull-right">Nombre: </b></td>
+               <td><%= @rh.name %></td>
+            </tr>
+         
+        </table>
+
+        <div class="modal-footer">
+            <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+        </div>
+
+    </div>
+    
+</div>

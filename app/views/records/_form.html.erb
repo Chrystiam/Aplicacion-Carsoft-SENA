@@ -1,19 +1,20 @@
 <%= javascript_include_tag "fecha" %>
 
 
-<%= simple_form_for(@record, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+<%= simple_form_for(@record, :html => { :multipart => true, :remote => true } ) do |f| %>
+
     
     <%= f.error_notification %>
     <%= display_base_errors @record %>
+
+    <div class="modal-body">
     
-    <div class="control-group">
-        <label class="control-label" for="inputName">Fch Radicación Demanda</label>
-        <div class="controls">
-            <div class="input-append date">
-                <%= f.input :date, :as => :string, :label => false, :input_html => {  :class=>"datepicker" } %>
+    <div class="span6"><div class="input-append date">
+            <%= f.label :date, :label => "Fecha",  :required => true %>
+                <%= f.input :date, :as => :string, :label => false, :input_html => {  :class=>"datepicker " } %>
             </div>
+          </div>
         </div>
-    </div>
 
     <p><%= f.input :time, :label => "	Hora",  :required => true  %></p>
     <p><%= f.input :amount, :label => "Cantidad",  :required => true  %></p>
@@ -46,3 +47,6 @@
       <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
     </div>
 <% end %>
+
+
+

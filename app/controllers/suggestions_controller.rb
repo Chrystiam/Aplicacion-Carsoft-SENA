@@ -1,4 +1,6 @@
 class SuggestionsController < ApplicationController
+
+before_filter :require_login, :except  => [ :new, :create ]
   
   def index
       if params[:registro] == nil or params[:registro] <= '0' then 
@@ -6,7 +8,6 @@ class SuggestionsController < ApplicationController
     end
     @suggestions = Suggestion.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
-    
   output = SuggestionList.new(@suggestions,view_context) # Aquí instancio el documento pdf
     respond_to do |format|
       format.pdf{

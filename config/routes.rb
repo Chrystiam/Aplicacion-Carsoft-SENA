@@ -11,7 +11,7 @@ Carsoft::Application.routes.draw do
 
   resources :authorizations
 
-  resources :suggestions
+  
 
     resources :users do
       get :autocomplete_center_name, :on => :collection
@@ -48,7 +48,7 @@ Carsoft::Application.routes.draw do
   get "login"  => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
-
+resources :suggestions
   resources :sessions, :only => [:new, :create, :destroy]
 
   resource :password_resets, :controller => "password_resets" #, :only => [:new, :edit]
