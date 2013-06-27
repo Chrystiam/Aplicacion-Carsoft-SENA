@@ -1,38 +1,37 @@
 <%- model_class = Authorization -%>
 <div class="page-header">
-  <h1>Authorization</h1>
+  <h1>Autorización</h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>surname</th>
-      <th>genre</th>
-      <th>document_id</th>
-      <th>identification</th>
-      <th>item_description</th>
-      <th>charge</th>
-      <th>phone</th>
-      <th>repair</th>
-      <th>sample_property</th>
-      <th>loan</th>
-      <th>seminar</th>
-      <th>course_elements</th>
-      <th>others</th>
-      <th>date</th>
-      <th>acceptance</th>
-      <th>user_id</th>
-      <th>created_at</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render @authorizations %>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td><%= link_to 'Nuevo Autorizacion', new_authorization_path, :remote => true %></td>
-    </tr>
-  </tfoot>
-</table>
+<div class="row">
+<div class="span6">
+</div>
+<div class="span10">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Usuarios</th>
+        <th>Elementos1</th>
+         <th>Cantidad1</th>
+        <th>Elementos2</th>
+         <th>Cantidad2</th>
+        <th>Elementos3</th>
+         <th>Cantidad3</th>
+        <th>Elementos4</th>
+        <th>Cantidad4</th>
+        <th>Destino</th>
+        <th>Usabilidad</th>
+        <th>Fechas</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @authorizations %>
+    </tbody>
+    <tfoot>
+      <tr>
+       <td><%= link_to image_tag('nuevosugerencia.png'),   new_authorization_path,  :remote => true %></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

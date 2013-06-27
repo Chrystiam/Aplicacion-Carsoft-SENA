@@ -1,27 +1,60 @@
-<%- model_class = Authorization -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-</div>
+<div class="responsive">
 
-<div class='authorization'>
-  <p><%= image_tag @authorization.avatar.url(:thumb) %></p>
-  <p><%= @authorization.id %></p>
-  <p><%= @authorization.name %></p>
-  <p><%= @authorization.surname %></p>
-  <p><%= @authorization.genre %></p>
-  <p><%= @authorization.document_id %></p>
-  <p><%= @authorization.identification %></p>
-  <p><%= @authorization.item_description %></p>
-  <p><%= @authorization.charge %></p>
-  <p><%= @authorization.phone %></p>
-  <p><%= @authorization.avatar %></p>
-  <p><%= @authorization.repair %></p>
-  <p><%= @authorization.sample_property %></p>
-  <p><%= @authorization.loan %></p>
-  <p><%= @authorization.seminar %></p>
-  <p><%= @authorization.course_elements %></p>
-  <p><%= @authorization.others %></p>
-  <p><%= @authorization.date %></p>
-  <p><%= @authorization.acceptance %></p>
-  <p><%= @authorization.user_id %></p>
+    <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+         <h3>Datos Autorizacion</h3>
+    </div>
+
+    <div class="modal-body">
+
+        <p id="notice"><%= notice %></p>
+
+        <p><%= image_tag @authorization.avatar.url(:thumb) %></p>
+        <table class="table table-striped table-condensed">
+            
+            <tr>
+               <td><b class="pull-right">Elemento1: </b></td>
+               <td><%= @authorization.element1 %></td>
+               <td><b class="pull-right">Cantidad1: </b></td>
+               <td><%= @authorization.sum1 %></td>
+            </tr>
+            <tr>
+               <td><b class="pull-right">Elemento2: </b></td>
+               <td><%= @authorization.element2 %></td>
+               <td><b class="pull-right">Cantidad2: </b></td>
+               <td><%= @authorization.sum2 %></td>
+            </tr>
+            <tr>
+               <td><b class="pull-right">Elemento3: </b></td>
+               <td><%= @authorization.element3 %></td>
+               <td><b class="pull-right">Cantidad3: </b></td>
+               <td><%= @authorization.sum3 %></td>
+            </tr>
+            <tr>
+               <td><b class="pull-right">Elemento4: </b></td>
+               <td><%= @authorization.element4 %></td>
+                <td><b class="pull-right">Cantidad4: </b></td>
+               <td><%= @authorization.sum4 %></td>
+            </tr>
+              <tr>
+               <td><b class="pull-right">Usuario: </b></td>
+               <td><%= @authorization.user.name %></td>
+                 <td><b class="pull-right">Fecha: </b></td>
+               <td><%= @authorization.date %></td>
+            </tr>
+
+             <tr>
+               <td><b class="pull-right">Usabilidad: </b></td>
+               <td><%= @authorization.usability.name %></td>
+                <td><b class="pull-right">Destino: </b></td>
+               <td><%= @authorization.destination.name %></td>
+            </tr>
+        </table>
+
+        <div class="modal-footer">
+            <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+        </div>
+
+    </div>
+    
 </div>

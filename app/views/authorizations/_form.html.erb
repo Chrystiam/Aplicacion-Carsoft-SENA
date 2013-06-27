@@ -1,31 +1,71 @@
-<%= simple_form_for(@authorization, :html => { :class => 'form-horizontal' }, :remote => true)  do |f| %>
+<%= javascript_include_tag "fecha" %>
+<%= simple_form_for(@authorization, :html => { :multipart => true, :remote => true } ) do |f| %>
+
+    <div class="modal-body">
 
   <%= f.error_notification %>
   <%= display_base_errors @authorization %>
 
-  <%= f.input :name %>
-  <%= f.input :surname %>
-  <%= f.input :genre %>
-  <%= f.input :document_id %>
-  <%= f.input :identification %>
-  <p><%= f.label :item_description, :label => "Descripcion",  :required => true %>
-       <%= f.text_area :item_description, :rows => 3 %></p>
-  <%= f.input :charge %>
-  <%= f.input :phone %>
-  <%= f.input :avatar %>
-  <%= f.input :repair %>
-  <%= f.input :sample_property %>
-  <%= f.input :loan %>
-  <%= f.input :seminar %>
-  <%= f.input :course_elements %>
-  <%= f.input :others %>
-  <%= f.input :date %>
-  <%= f.input :acceptance %>
-  <%= f.label :user_id, :label => "Usuario",  :required => true %>
-            <%= f.collection_select :user_id , User.all, :id, :name, :prompt => "Seleccione Usuario"  %>
-  <%= f.label :avatar %>
-  <%= f.file_field :avatar %>
+ <div class="row-fluid">
+  <div class="span12">
+      <div class="row-fluid">
+          <div class="span6"><%= f.label :user_id, :label => "Usuario",  :required => true %>
+             <%= f.collection_select :user_id , User.all, :id, :name, :prompt => "Seleccione Usuario"  %></div>
+       
+        <div class="span6"><div class="input-append date">
+            <%= f.label :date, :label => "Fecha",  :required => true %>
+                <%= f.input :date, :as => :string, :label => false, :input_html => {  :class=>"datepicker span2" } %>
+            </div>
+          </div>
+        </div>
+        
+  
+        <div class="row-fluid">
+          <div class="span6"><%= f.input :element1, :label => "Elemento 1",  :required => true  %></div>
+          
+           <div class="span6"><%= f.input :sum1, :label => "Cantidad 1",  :required => true,  :input_html => { :class => 'span2' } %>
+          </div>
+        </div>
+
+
+        </div>
+        <div class="row-fluid">
+          <div class="span6"><%= f.input :element2, :label => "Elemento 2",  :required => true  %></div>
+          
+           <div class="span6"><%= f.input :sum2, :label => "Cantidad 2",  :required => true,  :input_html => { :class => 'span2' }   %>
+          </div>
+        </div>
+
+         <div class="row-fluid">
+          <div class="span6"><%= f.input :element3, :label => "Elemento 3",  :required => true  %></div>
+          
+           <div class="span6"><%= f.input :sum3, :label => "Cantidad 3",  :required => true,  :input_html => { :class => 'span2' }   %>
+          </div>
+        </div>
+
+         <div class="row-fluid">
+          <div class="span6"><%= f.input :element4, :label => "Elemento 4",  :required => true  %></div>
+          
+           <div class="span6"><%= f.input :sum4, :label => "Cantidad 4",  :required => true,  :input_html => { :class => 'span2' }   %>
+          </div>
+        </div>
+
+         <div class="row-fluid">
+          <div class="span6"><%= f.label :usability_id, :label => "Usabilidad",  :required => true %>
+            <%= f.collection_select :usability_id , Usability.all, :id, :name, :prompt => "Seleccione Usabilidad"  %></div>
+          
+        <div class="span6"><%= f.label :destination_id, :label => "Destino",  :required => true %>
+        <%= f.collection_select :destination_id , Destination.all, :id, :name, :prompt => "Seleccione destino"  %>
+            
+        </div>
+
+  <p><%= f.label :avatar %>
+  <%= f.file_field :avatar %></p>
+
+   <p><%= f.input :acceptance %></p>
+
   <div class="form-actions">
+
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
     <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
   </div>

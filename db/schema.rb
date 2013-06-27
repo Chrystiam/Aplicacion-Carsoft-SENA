@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618042247) do
+ActiveRecord::Schema.define(:version => 20130625205700) do
 
   create_table "area_centers", :force => true do |t|
     t.string   "name"
@@ -41,24 +41,20 @@ ActiveRecord::Schema.define(:version => 20130618042247) do
   end
 
   create_table "authorizations", :force => true do |t|
-    t.string   "name"
-    t.string   "surname"
-    t.boolean  "genre"
-    t.integer  "document_id"
-    t.string   "identification"
-    t.text     "item_description"
-    t.string   "charge"
-    t.string   "phone"
+    t.string   "element1"
+    t.integer  "sum1"
+    t.string   "element2"
+    t.integer  "sum2"
+    t.string   "element3"
+    t.integer  "sum3"
+    t.string   "element4"
+    t.integer  "sum4"
     t.string   "avatar"
-    t.boolean  "repair"
-    t.boolean  "sample_property"
-    t.boolean  "loan"
-    t.boolean  "seminar"
-    t.string   "course_elements"
-    t.boolean  "others"
     t.date     "date"
     t.boolean  "acceptance"
     t.integer  "user_id"
+    t.integer  "destination_id"
+    t.integer  "usability_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.string   "avatar_file_name"
@@ -67,7 +63,8 @@ ActiveRecord::Schema.define(:version => 20130618042247) do
     t.datetime "avatar_updated_at"
   end
 
-  add_index "authorizations", ["document_id"], :name => "index_authorizations_on_document_id"
+  add_index "authorizations", ["destination_id"], :name => "index_authorizations_on_destination_id"
+  add_index "authorizations", ["usability_id"], :name => "index_authorizations_on_usability_id"
   add_index "authorizations", ["user_id"], :name => "index_authorizations_on_user_id"
 
   create_table "centers", :force => true do |t|
@@ -79,6 +76,13 @@ ActiveRecord::Schema.define(:version => 20130618042247) do
   end
 
   add_index "centers", ["area_center_id"], :name => "index_centers_on_area_center_id"
+
+  create_table "destinations", :force => true do |t|
+    t.string   "name"
+    t.string   "initials"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "documents", :force => true do |t|
     t.string   "name"
@@ -261,6 +265,13 @@ ActiveRecord::Schema.define(:version => 20130618042247) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "usabilities", :force => true do |t|
+    t.string   "name"
+    t.string   "initials"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

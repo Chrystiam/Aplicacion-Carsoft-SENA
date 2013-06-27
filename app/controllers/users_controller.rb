@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
-
     before_filter :require_login
     before_filter :find_user, :except => [ :index, :create, :new ]
-
     autocomplete :center, :name, :full => true
-
-     
    def index 
         if params[:registro] == nil or params[:registro] <= '0' then 
             params[:registro] = 2 

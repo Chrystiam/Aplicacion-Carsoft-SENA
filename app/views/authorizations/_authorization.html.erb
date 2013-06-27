@@ -1,26 +1,23 @@
 <tr id=<%= "authorization_#{authorization.id}" %>>
-  <td><%= link_to authorization.id, edit_authorization_path(authorization), :remote => true %></td>
-  <td><%= authorization.name %></td>
-  <td><%= authorization.surname %></td>
-  <td><%= authorization.genre %></td>
-  <td><%= authorization.document_id %></td>
-  <td><%= authorization.identification %></td>
-  <td><%= authorization.item_description %></td>
-  <td><%= authorization.charge %></td>
-  <td><%= authorization.phone %></td>
-  <td><%= authorization.repair %></td>
-  <td><%= authorization.sample_property %></td>
-  <td><%= authorization.loan %></td>
-  <td><%= authorization.seminar %></td>
-  <td><%= authorization.course_elements %></td>
-  <td><%= authorization.others %></td>
-  <td><%= authorization.date %></td>
-  <td><%= authorization.acceptance %></td>
-  <td><%= authorization.user_id %></td>
-  <td><%= authorization.avatar_file_name %></td>
-  <td>
-    <%= link_to 'Mostrar', authorization, :remote => true, :class => 'btn btn-mini' %>
-    <%= link_to 'Editar', edit_authorization_path(authorization), :remote => true,
-        :class => 'btn btn-mini' %>
-  </td>
+    <td><%= authorization.id %></td>
+    <td><%= authorization.user.name %></td>
+    <td><%= authorization.element1 %></td>
+    <td><%= authorization.sum1 %></td>
+    <td><%= authorization.element2 %></td>
+    <td><%= authorization.sum2 %></td>
+    <td><%= authorization.element3 %></td>
+    <td><%= authorization.sum3 %></td>
+    <td><%= authorization.element4 %></td>
+    <td><%= authorization.sum4 %></td>
+    <td><%= authorization.destination.name %></td>
+    <td><%= authorization.usability.name %></td>
+    <td><%= authorization.date %></td>
+  
+    <td>
+        <%= link_to 'Mostrar', authorization, :remote => true, :class => 'btn btn-mini' %></td>
+        <td>
+        <%= link_to 'Editar', edit_authorization_path(authorization), :remote => true,
+            :class => 'btn btn-mini' %>
+      </td>
 </tr>
+

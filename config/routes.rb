@@ -1,4 +1,10 @@
 Carsoft::Application.routes.draw do
+  resources :usabilities
+
+
+  resources :destinations
+
+
   get "sessions/new"
 
   get "users/new"
