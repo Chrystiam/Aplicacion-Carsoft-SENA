@@ -1,33 +1,30 @@
 <%= javascript_include_tag "fecha" %>
 <%= simple_form_for(@authorization, :html => { :multipart => true, :remote => true } ) do |f| %>
-
+<div class="responsive">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()"></button>
+           <h3>Datos Básicos Autorización</h3>
+      </div>
     <div class="modal-body">
-
   <%= f.error_notification %>
   <%= display_base_errors @authorization %>
-
  <div class="row-fluid">
   <div class="span12">
       <div class="row-fluid">
           <div class="span6"><%= f.label :user_id, :label => "Usuario",  :required => true %>
              <%= f.collection_select :user_id , User.all, :id, :name, :prompt => "Seleccione Usuario"  %></div>
-       
         <div class="span6"><div class="input-append date">
             <%= f.label :date, :label => "Fecha",  :required => true %>
                 <%= f.input :date, :as => :string, :label => false, :input_html => {  :class=>"datepicker span2" } %>
             </div>
           </div>
         </div>
-        
-  
         <div class="row-fluid">
           <div class="span6"><%= f.input :element1, :label => "Elemento 1",  :required => true  %></div>
           
            <div class="span6"><%= f.input :sum1, :label => "Cantidad 1",  :required => true,  :input_html => { :class => 'span2' } %>
           </div>
         </div>
-
-
         </div>
         <div class="row-fluid">
           <div class="span6"><%= f.input :element2, :label => "Elemento 2",  :required => true  %></div>
@@ -35,17 +32,14 @@
            <div class="span6"><%= f.input :sum2, :label => "Cantidad 2",  :required => true,  :input_html => { :class => 'span2' }   %>
           </div>
         </div>
-
          <div class="row-fluid">
           <div class="span6"><%= f.input :element3, :label => "Elemento 3",  :required => true  %></div>
           
            <div class="span6"><%= f.input :sum3, :label => "Cantidad 3",  :required => true,  :input_html => { :class => 'span2' }   %>
           </div>
         </div>
-
          <div class="row-fluid">
           <div class="span6"><%= f.input :element4, :label => "Elemento 4",  :required => true  %></div>
-          
            <div class="span6"><%= f.input :sum4, :label => "Cantidad 4",  :required => true,  :input_html => { :class => 'span2' }   %>
           </div>
         </div>
@@ -55,17 +49,17 @@
             <%= f.collection_select :usability_id , Usability.all, :id, :name, :prompt => "Seleccione Usabilidad"  %></div>
           
         <div class="span6"><%= f.label :destination_id, :label => "Destino",  :required => true %>
-        <%= f.collection_select :destination_id , Destination.all, :id, :name, :prompt => "Seleccione destino"  %>
+        <%= f.collection_select :destination_id , Destination.all, :id, :name, :prompt => "Seleccione destino"  %></br></br>
             
         </div>
 
-  <p><%= f.label :avatar %>
-  <%= f.file_field :avatar %></p>
+        <p><%= f.label :avatar %>
+        <%= f.file_field :avatar %></p></br>
 
-   <p><%= f.input :acceptance %></p>
+   <p><%= f.input :acceptance, :as => :radio, :label => "Aceptacion", :collection => [["No", false], ["Si", true]], :input_html => {:class => 'span8'}  %></p></br></br>
+
 
   <div class="form-actions">
-
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
     <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
   </div>

@@ -1,88 +1,93 @@
-
-<%= simple_form_for(@user, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
-    <%= f.error_notification %>
-    <%= display_base_errors @user %>
-
-  <div class="row-fluid">
-  <div class="span12">
-      <div class="row-fluid">
-          <div class="span6"><%= f.label :type_user_id, :label => "Tipo Usuario",  :required => true %>
-             <%= f.collection_select :type_user_id, TypeUser.all, :id, :name, :prompt => "Tipo Usuarios"   %></div>
-       
-
-        <div class="span6"><%= f.input :movil, :label => "Celular",  :required => true  %></div>
-
-        </div>
-        <div class="row-fluid">
-          <div class="span6"><%= f.input :name, :label => "Nombre Completo",  :required => true  %></div>
-          
-           <div class="span6"><%= f.label :rh_id, :label => "Rh",  :required => true %>
-           <%= f.collection_select :rh_id , Rh.all, :id, :name, :prompt => "Selecion Rhs"   %>
+<%= simple_form_for(@user, :html => { :multipart => true, :remote => true } ) do |f| %>
+  <div class="responsive">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()"></button>
+           <h3>Datos Básicos Usuario</h3>
+      </div>
+    <div class="modal-body">
+            <%= f.error_notification %>
+            <%= display_base_errors @user %>
+      <div class="row">
+        <div class="span10">
           </div>
-        </div>
-         <div class="row-fluid">
-         	<div class="span6"><%= f.input :gender, :as => :radio, :label => "Genero", :collection => [["Masculino", false], ["Femenino", true]] %></div>
-         
-          <div class="span6">
-          </div>
-     
-        
-
-        </div>
-       
-        </div>
-         <div class="row-fluid">
-           
-            <div class="span6"><%= f.label :document_id, :label => "Documento",  :required => true %>
-            <%= f.collection_select :document_id , Document.all, :id, :name, :prompt => "Tipo Documentos"  %>
-          </div>
-
-           <div class="span6"><%= f.input :center_name,  :url => autocomplete_center_name_users_path, :as => :autocomplete,:label => "Centro",  :required => true   %>
-  <%= f.label :avatar %>
-  <%= f.file_field :avatar %>
-          </div>
-
- <div class="span6"><%= f.input :email, :label => "email",  :required => true  %></div>
-        </div>
-         <div class="row-fluid">
-         	 <div class="span6"><%= f.input :identification, :label => "Identidad",  :required => true  %></div>
-          
-         
-         <div class="span6"><%= f.input :password, :label => "Password",  :required => true %></div>
-        </div>
             <div class="row-fluid">
-            	   <div class="span6"><%= f.input :address_residence, :label => "Direccion",  :required => true  %></div>
-
-              <div class="span6"><%= f.input :password_confirmation, :label => "Confirmar password",  :required => true  %></div>
-        </div>
+              <div class="span12">
+                <div class="row-fluid">
+                  <div class="span12">
+                    <div class="row-fluid">
+                        <div class="span6"><%= f.label :type_user_id, :label => "Tipo Usuario",  :required => true %>
+                         <%= f.collection_select :type_user_id, TypeUser.all, :id, :name, :prompt => "Tipo Usuarios"   %>
+                        </div>
+                          <div class="span6"><div class="input-append date"><%= f.input :movil, :label => "Celular",  :required => true  %>
+                          </div>
+                    </div>
+                  </div>
+                <div class="row-fluid">
+                    <div class="span6">
+                    </div>
+                    <div class="span6">
+                </div>
+            </div>
             <div class="row-fluid">
-         
-          <div class="span6"><%= f.input :phone, :label => "Telefono",  :required => true  %></div>
-          <div class="span6"></div>
+                <div class="span6"><%= f.input :name, :label => "Nombre",  :required => true  %>
+                </div>
+                <div class="span6"><%= f.label :rh_id, :label => "Rh",  :required => true %><%= f.collection_select :rh_id , Rh.all, :id, :name, :prompt => "Selecion Rhs"   %>
+                </div>
+            </div>
+            <div class="row-fluid">
+              <div class="span6"><%= f.input :gender, :as => :radio, :label => "Genero", :collection => [["Masculino", false], ["Femenino", true]], :input_html => {:class => 'span8'}  %>
+              </div>
+              <div class="span6"><%= f.input :center_name,  :url => autocomplete_center_name_users_path, :as => :autocomplete,:label => "Centro",  :required => true   %>
+              </div>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span6"><%= f.label :document_id, :label => "Documento",  :required => true %><%= f.collection_select :document_id , Document.all, :id, :name, :prompt => "Tipo Documentos"  %>
+            </div>
+            <div class="span6"><%= f.input :email, :label => "email",  :required => true  %>  
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span6"><%= f.input :identification, :label => "Identidad",  :required => true  %>
+            </div>
+            <div class="span6"><%= f.input :password, :label => "Password",  :required => true %>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span6"><%= f.input :address_residence, :label => "Direccion",  :required => true  %>
+            </div>
+            <div class="span6"><%= f.input :password_confirmation, :label => "Confirmar",  :required => true  %>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span6"><%= f.input :phone, :label => "Telefono",  :required => true  %>
+            </div>
+            <div class="span6"><%= f.file_field :avatar %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>  
-    <% if  can? :update, User %>
-          <div class="well well-small">
-             <% for role in Role.all %>
-                   <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
-                   <%= role.name %>
-                   <% if role.id % 4 == 0 %> 
-                         <br>
-                   <% end %>
-             <% end %>
-             <%= hidden_field_tag "user[role_ids][]", "" %>
-          </div>
-      <% end %>
-
-      <div class="modal-footer">
-          <%= f.submit "guardar", :class => 'btn btn-primary' %>
-          <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
-      </div>
-      
-    <% end %>
+          <p>  
+            <% if  can? :update, User %>
+                <div class="well well-small">
+                      <% for role in Role.all %>
+                        <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+                        <%= role.name %>
+                    <% if role.id % 4 == 0 %> 
+                                <br>
+                    <% end %>
+                  <% end %>
+                  <%= hidden_field_tag "user[role_ids][]", "" %>
+                </div>
+          </p>
+              <% end %>
+    <div class="modal-footer">
+      <%= f.submit "guardar", :class => 'btn btn-primary' %>
+      <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+    </div>
+<% end %>
      
 
 
