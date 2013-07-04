@@ -36,14 +36,16 @@
               <td><%= link_to image_tag("atras.png"), users_path, :class => 'btn btn-mini', :rel => "tooltip", :title => "Regresar a Usuarios" %></td>
         </tr>
       </tfoot>
-      <tfoot>
+        <tfoot>
           <tr>
-              <td><b>Total Vehiculos </b></td>
             <td>
-                <p id='total_regs'><%= @vehicles.total_entries %></p>
-            </td>
+          <b>Total Vehiculos</b>
+        </td>
+          <td>
+         <p id='total_regs'><%= @vehicles.total_entries %></p>
+        </td>
           </tr>
-      </tfoot>
+        </tfoot>
     </table>
   </div>
     </table>

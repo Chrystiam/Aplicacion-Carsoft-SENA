@@ -33,3 +33,8 @@ gem 'prawn'
 group :development do
   gem "better_errors"
 end
+
+group :test do
+	gem "commands"
+	gem "mocha"
+end

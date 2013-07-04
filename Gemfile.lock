@@ -53,6 +53,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    commands (0.2.1)
+      rails (>= 3.2.0)
     commonjs (0.2.6)
     daemons (1.1.9)
     database_cleaner (1.0.1)
@@ -84,7 +86,10 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.23)
+    mocha (0.14.0)
+      metaclass (~> 0.0.1)
     multi_json (1.7.2)
     multipart-post (1.2.0)
     oauth (0.4.7)
@@ -190,6 +195,7 @@ DEPENDENCIES
   bootstrap-will_paginate
   cancan
   coffee-rails (~> 3.2.2)
+  commands
   database_cleaner
   execjs
   jquery-rails
@@ -197,6 +203,7 @@ DEPENDENCIES
   lazybox (= 0.2.3)
   less-rails
   mime-types
+  mocha
   paperclip
   pg
   prawn
