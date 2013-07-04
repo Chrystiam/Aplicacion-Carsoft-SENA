@@ -11,4 +11,7 @@ class Center < ActiveRecord::Base
   	@ubicacion = center + " | " + area_center.name  + " | " +   area_center.responsible.name
   end
 
+  validates :name, :presence  => { :message => "Por Favor ingrese un nombre" } , :length => { :maximum => 50, :message => "el nombre ingresado es demasiado largo"},   :uniqueness  => { :message => "Este nombre ya fue registrado por favor ingrese otro" }        
+	validates :code, :presence  => { :message => "Por Favor ingrese un codigo" } , :length => { :maximum => 30, :message => "el codigo ingresado es demasiado largo"},  :uniqueness  => { :message => "Este codigo ya fue registrado por favor ingrese otro" }         
+
 end 

@@ -11,5 +11,5 @@ class Authorization < ActiveRecord::Base
     square: '200x200#',
     medium: '300x300>'
   }
-  
+
 end

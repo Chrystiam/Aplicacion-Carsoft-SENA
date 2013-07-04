@@ -83,4 +83,5 @@ resources :suggestions
 
   resources :type_materials
 
+  
 end

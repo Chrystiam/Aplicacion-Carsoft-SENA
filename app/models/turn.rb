@@ -3,4 +3,11 @@ class Turn < ActiveRecord::Base
     def self.search(search)
 		where("day like '%#{search}%' ")
 	end
+
+	validates :day, :presence  => { :message => "Por Favor ingrese la fecha del registro" }         
+	validates :start_date, :presence  => { :message => "Por Favor la fecha de inicio" }         
+	validates :finish_time, :presence  => { :message => "Por Favor la fecha de terminación" } 
+	validates :start_date, :presence  => { :message => "Por Favor la fecha de inicio" }         
+	validates :finish_date, :presence  => { :message => "Por Favor la fecha de terminación" }         
+     
 end

@@ -14,5 +14,12 @@
 		where("destination like '%#{search}%' or provenance like '%#{search}%'")
 	end
 
+  validates :amount, :presence  => { :message => "Por Favor ingrese un nombre" }         
+  validates :date, :presence  => { :message => "Por Favor ingrese una fecha" }         
+  validates :destination, :presence  => { :message => "Por Favor ingrese un destino" }         
+  validates :movements, :presence  => { :message => "Por Favor ingrese un movimiento" }         
+  validates :provenance, :presence  => { :message => "Por Favor ingrese una procedencia" }         
+  validates :time, :presence  => { :message => "Por Favor ingrese un tiempo" }                 
+
 end
  
