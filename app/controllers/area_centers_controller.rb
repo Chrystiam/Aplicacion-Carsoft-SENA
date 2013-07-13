@@ -4,14 +4,11 @@ class AreaCentersController < ApplicationController
   before_filter :find_area_center, :except => [ :index, :create, :new ]
 
   def index
-    @area_centers = @responsible.area_centers.all
-
-    respond_to do |format|
-      format.html 
-      format.json { render json: @area_centers }
+   if params[:registro] == nil or params[:registro] <= '0' then 
+            params[:registro] = 4
     end
+     @area_centers = AreaCenter.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
-
 
   def show
   end

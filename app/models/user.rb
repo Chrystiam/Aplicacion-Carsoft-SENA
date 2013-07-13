@@ -39,8 +39,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email, :name, :phone
   validates_uniqueness_of :email
 
-  validates :address_residence, :presence  => { :message => "Por Favor ingrese una direccion" } , :length => { :maximum => 50, :message => "la direccion ingresada es demasiado larga"}      
-  validates :gender, :presence  => { :message => "Por Favor ingrese un genero" }         
+  validates :address_residence, :presence  => { :message => "Por Favor ingrese una direccion" } , :length => { :maximum => 50, :message => "la direccion ingresada es demasiado larga"}            
   validates :identification, :presence  => { :message => "Por Favor ingrese el numero de identificación" } , :length => { :maximum => 20, :message => "el numero de identificación ingresado es demasiado largo"} ,  :uniqueness  => { :message => "Este numero de identificacion ya fue registrado por favor ingrese otro" }         
   validates :name, :presence  => { :message => "Por Favor ingrese un nombre" } , :length => { :maximum => 50, :message => "el nombre ingresado es demasiado largo"}
 

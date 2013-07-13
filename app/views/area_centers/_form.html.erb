@@ -7,8 +7,7 @@
   <%= f.input :extension %>
   <%= f.input :phone %>
   <%= f.input :specification %>
-  <%= f.label :responsible_id, :label => "Responsable",  :required => true %>
-            <%= f.collection_select :responsible_id , Responsible.all, :id, :name, :prompt => "Responsable"  %>
+  
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
     <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>

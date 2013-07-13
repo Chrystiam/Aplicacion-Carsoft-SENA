@@ -56,7 +56,7 @@ class SuggestionList < Prawn::Document
 
   def suggestion_details
     move_down 60
-    table suggestion_item_rows, :width => 559.9879999999999 do
+    table suggestion_item_rows, :width => 559.8839999999999 do
       row(0).font_style = :bold
       columns(1..3).align = :right
       self.header = true

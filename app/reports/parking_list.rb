@@ -57,7 +57,7 @@ class ParkingList < Prawn::Document
 
   def parking_details
     move_down 60
-    table parking_item_rows, :width =>  519.996 do
+    table parking_item_rows, :width =>  559.8839999999999 do
       row(0).font_style = :bold
       columns(1..3).align = :right
       self.header = true

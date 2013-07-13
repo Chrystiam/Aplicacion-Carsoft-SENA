@@ -21,6 +21,7 @@ background: #dddddd url('Principal-home.png') no-repeat fixed top left;
 /*background: #dddddd url(http://2.bp.blogspot.com/-fB6l69XEZnQ/UKpngjRn4TI/AAAAAAAAAYY/9j3SJpjWBFU/s0/fondo.jpg) no-repeat fixed top left;*/
 }
 
+
 #lazybox div.team{ max-width: 500px; }
 
 .lazybox {
@@ -214,7 +215,7 @@ margin-top: -10px;
   margin-top: -20px;
 }
 
-#admin{
+#admin,#admin1{
   margin-top: -40px;
 }
 
@@ -350,12 +351,23 @@ div.dp-popup td.disabled {
   cursor: default;
 }
 
+#pdf{
+  margin-top: -80px;
+  margin-left: 1100px;
 
+}
 
+th,tr.fondo{
+  background: #FFFFFF  ;
 
+}
 
-
-
+input#totalregs{
+  box-shadow: 0 0 5px rgba(252, 115, 35, 1); 
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(252, 115, 35, 1);
+}
 
 
 

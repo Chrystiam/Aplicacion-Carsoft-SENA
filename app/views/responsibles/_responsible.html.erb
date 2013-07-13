@@ -1,21 +1,15 @@
-<tr id=<%= "responsible_#{responsible.id}" %>>
+<tr class="fondo " id=<%= "responsible_#{responsible.id}" %>>
   <td><%= responsible.id %></td>
   <td><%= responsible.name %></td>
   <td><%= responsible.surname %></td>
   <td><%= responsible.extension %></td>
-  <td><%= responsible.document.name %></td>
+  <td><%= responsible.document_id %></td>
   <td><%= responsible.identification %></td>
   <td><%= responsible.genre %></td>
   <td><%= responsible.phone %></td>
   <td>
   <%= link_to  image_tag('mostrar.png'), responsible,     :remote => true, :class => 'btn btn-mini' %>
-
-    <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_responsible_path(responsible),  :remote => true,
-        :class => 'btn btn-mini'%>
-
-         <td><%= link_to image_tag('miembros.png', :tile => "Agregar Miembros"), responsible_area_centers_path(responsible) %></td>
-
-       
-       
+    <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_responsible_path(responsible),  :remote => true,:class => 'btn btn-mini'%>
+    <td><%= link_to image_tag('miembros.png', :tile => "Agregar Miembros"), responsible_area_centers_path(responsible) %></td>
   </td>
 </tr>

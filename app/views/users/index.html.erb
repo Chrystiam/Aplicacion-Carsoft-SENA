@@ -1,34 +1,35 @@
 <%- model_class = User -%>
-  <div class="page-header">
+
+  <div id='admin1' class="page-header">
     <h1>Usuarios</h1>
-  </div>
-  <div class="navbar">
+     <div class="navbar">
     <div class="navbar-inner">
     <li id='buscar' class="brand" href="#">Buscar</li> 
       <div class="row">
         <div class="span6">
           <form method="GET" class="form-inline" >
             <input id='buscar' name="buscar" class="search-query" type="text"  placeholder="Buscar" >
-           <a  rel="tooltip" title="Ingresar datos a buscar"><button id='buscar' type="submit" class="btn btn-primary btn-mini"><i class="icon-search icon-white"></i></button></a>
+           <a  rel="tooltip" title="Ingresar datos a buscar"><button id='buscar' type="submit" class="btn btn-primary btn-mini"><i class="icon-search icon-white"></i></button></a> 
           </form>
         </div>
       </div>
     </div>
   </div>
-    <table class="table table-striped">
+  <div id="pdf"><%= link_to  image_tag('pdf.png'), users_path(:format => :pdf), :class => 'btn btn-mini', :rel => "tooltip", :title => "Imprimir Registreos" %></div>
+  </div>
+
+    <table class="table table-hover"  >
       <thead>
-        <tr>
-          <th>id</th>
-          <th>Nombre</th>
-          <th>Identificacion</th>
-          <th>Direccion</th>
-          <th>Telefono</th>
-          <th>Celular</th>
-          <th>
-            <div class="span-11">
-              <%= link_to  image_tag('pdf.png', :tile  => "Imprimir Registros"), users_path(:format => :pdf) %>
-            </div>
-          </th> 
+        <tr >
+          <th class="fondo">id</th>
+          <th class="fondo">Nombre</th>
+          <th class="fondo">Identificacion</th>
+          <th class="fondo">Direccion</th>
+          <th class="fondo">Telefono</th>
+          <th class="fondo">Celular</th>
+          <th class="fondo"></th>
+          <th class="fondo">Acciones</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -41,15 +42,14 @@
       </tfoot>
       <tfoot>
           <tr>
-              <td><b>Total</b></td>
+              <td><b>Total Usuarios:</b></td>
             <td>
-                <p id='total_regs'><%= @users.total_entries %></p>
+                <input type="text"  id="totalregs" class="span1" value="<%= @users.total_entries %>" readonly />
             </td>
           </tr>
       </tfoot>
     </table>
-  </div>
-    </table>
+  
       <div align="center">
         <div id="pagination" class="pagination">
           </ul>
@@ -57,3 +57,5 @@
           </ul>
         </div>
       </div>
+
+

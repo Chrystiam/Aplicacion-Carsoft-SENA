@@ -57,11 +57,11 @@ class UserList < Prawn::Document
 
   def user_details
     move_down 80
-    table user_item_rows, :width =>  579.9839999999999 do
+    table user_item_rows, :width =>  559.8839999999999 do
       row(0).font_style = :bold
       columns(1..3).align = :right
       self.header = true
-      self.column_widths = {8 => 7, 6 => 100, 12 => 1000, 8 => 1000}
+      self.column_widths = {8 => 7, 6 => 500, 12 => 500, 8 => 500}
     end
   end
 

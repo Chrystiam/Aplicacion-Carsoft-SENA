@@ -3,12 +3,10 @@ class ResponsiblesController < ApplicationController
   before_filter :find_responsible, :except => [ :index, :create, :new ]
 
   def index
-    @responsibles = Responsible.all
-
-    respond_to do |format|
-      format.html 
-      format.json { render json: @responsibles }
+     if params[:registro] == nil or params[:registro] <= '0' then 
+            params[:registro] = 4
     end
+        @responsibles = Responsible.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
 
   def show

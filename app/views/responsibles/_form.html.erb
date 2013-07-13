@@ -3,14 +3,15 @@
   <%= f.error_notification %>
   <%= display_base_errors @responsible %>
 
-  <p><%= f.input :name %></p>
-  <p><%= f.input :surname %></p>
-  <p><%= f.input :extension %></p>
+  <p><%= f.input :name, :label => "Nombre",  :required => true %></p>
+  <p><%= f.input :surname, :label => "Apellido",  :required => true %></p>
   <p><%= f.label :document_id, :label => "Documento",  :required => true %>
             <%= f.collection_select :document_id , Document.all, :id, :name, :prompt => "Tipo Documentos"  %></p>
   <p><%= f.input :identification %></p>
-  <p><%= f.input :genre, :as => :radio, :label => "Genero", :collection => [["Masculino", false], ["Femenino", true]] %></p>
+  <p><%= f.input :genre, :as => :radio, :label => "Genero", :collection => [["Masculino", false], ["Femenino", true]], :input_html => {:class => 'span8'} %></p>
   <p><%= f.input :phone %></p>
+  <p><%= f.input :extension, :label => "Extension",  :required => true %></p>
+  
   <div class="form-actions">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
     <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>

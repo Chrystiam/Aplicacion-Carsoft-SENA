@@ -4,16 +4,16 @@ class UsersController < ApplicationController
     autocomplete :center, :name, :full => true
    def index 
         if params[:registro] == nil or params[:registro] <= '0' then 
-            params[:registro] = 2 
+            params[:registro] = 6
         end
         @users = User.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
         output = UserList.new(@users,view_context) # Aquí instancio el documento pdf
-    respond_to do |format|
-      format.pdf{
-      send_data output.render, :filename => "userslist.pdf", :type => "application/pdf", :disposition => "inline" # este parámetro permite ver el documento pdf en
+        respond_to do |format|
+        format.pdf{
+         send_data output.render, :filename => "userslist.pdf", :type => "application/pdf" # este parámetro permite ver el documento pdf en
         }
-      format.html #{ render :text => "<h1>Use .pdf</h1>".html_safe }
+       format.html #{ render :text => "<h1>Use .pdf</h1>".html_safe }
       format.json { render json: @users  }
     end
   
@@ -27,10 +27,12 @@ class UsersController < ApplicationController
         @user = User.new(params[:user])
         render :action => :new unless @user.save
         Record.create(:user_id => @user.id)
+        @users = User.all 
     end 
     
     def show
         @user = User.find(params[:id])
+
     end
 
     def edit
@@ -54,6 +56,8 @@ class UsersController < ApplicationController
     def destroy
         @user = User.find(params[:id])
         @user.destroy
+        @users = User.all 
+
     end
     
     private

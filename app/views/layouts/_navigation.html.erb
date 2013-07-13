@@ -1,7 +1,4 @@
 <ul class="nav">
-
-
-
   <% if current_user %>
 
       <% if  can? :update, pages_admin_path %>
@@ -12,8 +9,10 @@
       <li><%= link_to "Salir", :logout %></li>
       <li><%= truncate "#{current_user.name }" %></li>
    <% else %>
+      
       <li><%= link_to "Ingresar", :login %></li>
       <li><%= link_to('Sugerencias', new_suggestion_path,  :remote => true) %></li>
+
    <% end %>
 </ul>
 

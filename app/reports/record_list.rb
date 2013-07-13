@@ -56,7 +56,7 @@ class RecordList < Prawn::Document
   #Método que imprime la tabla de las ordenes que hay
   def record_details
     move_down 60
-    table record_item_rows, :width => 639.9719999999999 do
+    table record_item_rows, :width => 559.8839999999999 do
       row(0).font_style = :bold
       columns(1..3).align = :right
       self.header = true
