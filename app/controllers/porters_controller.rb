@@ -29,6 +29,7 @@ class PortersController < ApplicationController
       @porter = Porter.new(params[:porter])
       render :action => :new unless @porter.save
       Record.create(:porter_id => @porter.id)
+      @porters = Porter.all
   end
 
   def update
@@ -39,6 +40,7 @@ class PortersController < ApplicationController
   def destroy
       @porter = Porter.find(params[:id])
       @porter.destroy
+      @porters = Porter.all
      
   end  
 end

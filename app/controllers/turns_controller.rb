@@ -26,6 +26,7 @@ class TurnsController < ApplicationController
   def create
       @turn= Turn.new(params[:turn ])
       render :action => :new unless @turn.save
+      @turns = Turn.all
       
   end
 
@@ -37,6 +38,7 @@ class TurnsController < ApplicationController
   def destroy
       @turn = Turn.find(params[:id])
       @turn.destroy
+      @turns = Turn.all
      
   end  
 end

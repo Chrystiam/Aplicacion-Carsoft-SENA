@@ -1,9 +1,13 @@
-<%= simple_form_for @usability, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :name %>
-  <%= f.input :initials %>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                usabilities_path, :class => 'btn' %>
-  </div>
+<%= simple_form_for(@usability, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+    <%= f.error_notification %>
+    <%= display_base_errors @usability %>
+
+
+    <p><%= f.input :name, :label => "Nombre",  :required => true  %></p>
+    <p><%= f.input :initials, :label => "Iniciales",  :required => true  %></p>
+  
+    <div class="form-actions">
+        <%= f.submit "guardar", :class => 'btn btn-primary' %>
+        <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+    </div>
 <% end %>

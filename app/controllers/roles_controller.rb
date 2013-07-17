@@ -2,7 +2,7 @@ class RolesController < ApplicationController
    before_filter :require_login
   def index
     if params[:registro] == nil or params[:registro] <= '0' then 
-        params[:registro] = 2 
+        params[:registro] = 5 
     end
     @roles = Role.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
@@ -26,6 +26,7 @@ class RolesController < ApplicationController
   def create
       @role = Role.new(params[:rol])
       render :action => :new unless @role.save
+      @roles = Role.all
       
   end
 
@@ -37,6 +38,7 @@ class RolesController < ApplicationController
   def destroy
       @role = Role.find(params[:id])
       @role.destroy
+      @roles = Role.all
      
   end  
 end

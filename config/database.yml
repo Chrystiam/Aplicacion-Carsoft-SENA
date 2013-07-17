@@ -4,7 +4,7 @@ development:
   database: carsoft_development
   pool: 5
   username: postgres
-  password: postgres
+  password: adsisenacarsoft
   host: localhost
   port: 5432
 
@@ -14,7 +14,7 @@ test:
   database: carsoft_test
   pool: 5
   username: postgres
-  password: postgres
+  password: adsisenacarsoft
   host: localhost
   port: 5432
 
@@ -24,6 +24,6 @@ production:
   database: carsoft_production
   pool: 5
   username: postgres
-  password: postgres
+  password: adsisenacarsoft
   host: localhost
   port: 5432

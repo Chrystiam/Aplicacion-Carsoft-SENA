@@ -1,21 +1,23 @@
+<div  id='admin2'><%= link_to image_tag("admi.png "), admin2_path, :rel => "tooltip", :title => "Regresar Pagina Administración1"  %></div>
 <%- model_class = Turn -%>
-  <div class="page-header">
-    <h1>Turnos</h1>
-  </div>
-   <div class="navbar">
+  <div id="admin1"class="page-header">
+    <h1 class="fondo">Turnos</h1>
+     <div class="navbar">
     <div class="navbar-inner">
     <li id='buscar' class="brand" href="#">Buscar</li> 
       <div class="row">
         <div class="span6">
           <form method="GET" class="form-inline" >
             <input id='buscar' name="buscar" class="search-query" type="text"  placeholder="Buscar" >
-            <button id='buscar' type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></	   button>
+            <button id='buscar' type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></     button>
           </form>
         </div>
       </div>
     </div>
   </div>
-    <table class="table table-striped table-bordered table-condensed">
+  </div>
+  
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>Id</th>
@@ -35,11 +37,11 @@
           <td><%= link_to image_tag('nuevo.png', :tile  => "Mostrar Equipos"),  new_turn_path,  :remote => true %></td>
         </tr>
       </tfoot>
-      <tfoot>
+    <tfoot>
           <tr>
-              <td><b>Total Turnos </b></td>
+              <td><b >Total:</b></td>
             <td>
-                <p id='total_regs'><%= @turns.total_entries %></p>
+                <input type="text"  id="totalregs" class="span1" value="<%= @turns.total_entries %>" readonly />
             </td>
           </tr>
       </tfoot>

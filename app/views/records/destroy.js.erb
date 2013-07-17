@@ -1,1 +1,2 @@
 $("table tr#record_<%= @record.id %>").remove();
+$("input#totalregs").attr('value','<%= @records.count %>');

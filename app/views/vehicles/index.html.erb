@@ -1,8 +1,7 @@
 <%- model_class = Vehicle -%>
   <div class="page-header">
-    <h1><%= link_to image_tag("php.png ")%> <%= @user.name %></h1>
-  </div>
-   <div class="navbar">
+    <h1 class="fondo">Vehiculos</h1>
+    <div class="navbar">
     <div class="navbar-inner">
     <li id='buscar' class="brand" href="#">Buscar</li> 
       <div class="row">
@@ -15,6 +14,8 @@
       </div>
     </div>
   </div>
+  </div>
+   
     <table class="table table-hover">
       <thead>
         <tr>
@@ -32,20 +33,18 @@
       </tbody>
       <tfoot>
         <tr>
-           <td><%= link_to image_tag('glyphicons_005_car.png'), new_user_vehicle_path, :remote => true, :class => 'btn btn-mini', :rel => "tooltip", :title => "Igresar Vehiculos" %> </td>
+           <td><%= link_to image_tag('nuevo.png'), new_user_vehicle_path, :remote => true, :class => 'btn btn-mini', :rel => "tooltip", :title => "Igresar Vehiculos" %> </td>
               <td><%= link_to image_tag("atras.png"), users_path, :class => 'btn btn-mini', :rel => "tooltip", :title => "Regresar a Usuarios" %></td>
         </tr>
       </tfoot>
-        <tfoot>
+       <tfoot>
           <tr>
+              <td><b >Total Vehiculos:</b></td>
             <td>
-          <b>Total Vehiculos</b>
-        </td>
-          <td>
-         <p id='total_regs'><%= @vehicles.total_entries %></p>
-        </td>
+                <input type="text"  id="totalregs" class="span1" value="<%= @vehicles.total_entries %>" readonly />
+            </td>
           </tr>
-        </tfoot>
+      </tfoot>
     </table>
   </div>
     </table>

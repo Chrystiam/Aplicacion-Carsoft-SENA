@@ -1,8 +1,7 @@
 <%- model_class = ModifyUser -%>
   <div class="page-header">
-    <h1>Modificacion usuarios</h1>
-  </div>
-    <div class="navbar">
+    <h1 class="fondo">Modificacion usuarios</h1>
+      <div class="navbar">
     <div class="navbar-inner">
     <li id='buscar' class="brand" href="#">Buscar</li> 
       <div class="row">
@@ -15,6 +14,8 @@
       </div>
     </div>
   </div>
+  </div>
+  
     <table class="table table-striped table-bordered table-condensed">
       <thead>
         <tr>
@@ -29,22 +30,22 @@
       </tbody>
       <tfoot>
         <tr>
-         <td><%= link_to image_tag("nuevocambio.png"), new_user_modify_user_path, :remote => true,  :rel => "tooltip", :title => "Ingresar Modificaciones", :class => "btn btn-mini"  %> </td>
+         <td><%= link_to image_tag("nuevo.png"), new_user_modify_user_path, :remote => true,  :rel => "tooltip", :title => "Ingresar Modificaciones", :class => "btn btn-mini"  %> </td>
               <td><%= link_to image_tag("atras.png"), users_path,  :rel => "tooltip", :title => "Regresar Usuarios", :class => "btn btn-mini" %></td>
         </tr>
 
       </tfoot>
-      <tfoot>
+    <tfoot>
           <tr>
-              <td><b>Total Usuarios</b></td>
+              <td><b >Total Modificaciones:</b></td>
             <td>
-                <p id='total_regs'><%= @modify_users.total_entries %></p>
+                <input type="text"  id="totalregs" class="span1" value="<%= @modify_users.total_entries %>" readonly />
             </td>
           </tr>
       </tfoot>
     </table>
   </div>
-    </table>
+  
       <div align="center">
         <div id="pagination" class="pagination">
           </ul>

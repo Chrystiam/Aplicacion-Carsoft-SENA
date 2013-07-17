@@ -1,7 +1,10 @@
 class AuthorizationsController < ApplicationController
    before_filter :require_login
   def index
-    @authorizations = Authorization.all
+    if params[:registro] == nil or params[:registro] <= '0' then 
+            params[:registro] = 6
+    end
+    @authorizations = Authorization.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,6 +27,7 @@ class AuthorizationsController < ApplicationController
   def create
     @authorization = Authorization.new(params[:authorization])
     render :action => :new unless @authorization.save
+    @authorization = Authorization.all
   end
 
   def update
@@ -34,5 +38,6 @@ class AuthorizationsController < ApplicationController
   def destroy
     @authorization = Authorization.find(params[:id])
     @authorization.destroy
+    @authorization = Authorization.all
   end
 end

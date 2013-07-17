@@ -2,7 +2,7 @@ class TypeUsersController < ApplicationController
    before_filter :require_login
   def index
      if params[:registro] == nil or params[:registro] <= '0' then 
-        params[:registro] = 2 
+        params[:registro] = 5 
     end
     @type_users = TypeUser.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
@@ -26,6 +26,7 @@ class TypeUsersController < ApplicationController
   def create
       @type_user = TypeUser.new(params[:type_user ])
       render :action => :new unless @type_user.save
+      @type_users = TypeUser.all
       
   end
 
@@ -37,6 +38,7 @@ class TypeUsersController < ApplicationController
   def destroy
       @type_user = TypeUser.find(params[:id])
       @type_user.destroy
+      @type_users = TypeUser.all
      
   end  
 end

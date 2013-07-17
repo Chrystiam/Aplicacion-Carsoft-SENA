@@ -1,7 +1,7 @@
+<div  id='admin2'><%= link_to image_tag("admi.png "), "pages/admin", :rel => "tooltip", :title => "Regresar Pagina Administración1"  %></div>
 <%- model_class = User -%>
-
   <div id='admin1' class="page-header">
-    <h1>Usuarios</h1>
+    <h1 class="fondo">Usuarios</h1>
      <div class="navbar">
     <div class="navbar-inner">
     <li id='buscar' class="brand" href="#">Buscar</li> 
@@ -15,7 +15,8 @@
       </div>
     </div>
   </div>
-  <div id="pdf"><%= link_to  image_tag('pdf.png'), users_path(:format => :pdf), :class => 'btn btn-mini', :rel => "tooltip", :title => "Imprimir Registreos" %></div>
+  <div id="pdf"><%= link_to  image_tag('pdf.png'), users_path(:format => :pdf), :class => 'btn btn-mini', :rel => "tooltip", :title => "Imprimir Registreos" %>
+  </div >
   </div>
 
     <table class="table table-hover"  >
@@ -28,9 +29,10 @@
           <th class="fondo">Telefono</th>
           <th class="fondo">Celular</th>
           <th class="fondo"></th>
-          <th class="fondo">Acciones</th>
-          
+          <th class="fondo"></th>
+          <th class="fondo">Acciones</th>      
         </tr>
+
       </thead>
       <tbody>
        <%= render @users %>
@@ -42,7 +44,7 @@
       </tfoot>
       <tfoot>
           <tr>
-              <td><b>Total Usuarios:</b></td>
+              <td><b >Total Usuarios:</b></td>
             <td>
                 <input type="text"  id="totalregs" class="span1" value="<%= @users.total_entries %>" readonly />
             </td>

@@ -27,6 +27,7 @@ class TeamsController < ApplicationController
       @team =  @user.team.new(params[:team])
       render :action => :new unless @team.save
       Record.create(:team_id => @team.id)
+      @teams = Team.all
   end
 
   def update
@@ -37,6 +38,7 @@ class TeamsController < ApplicationController
   def destroy
       @team = Team.find(params[:id])
       @team.destroy
+       @teams = Team.all
   end
    
   private

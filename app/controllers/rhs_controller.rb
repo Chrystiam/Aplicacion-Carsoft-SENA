@@ -26,6 +26,7 @@ class RhsController < ApplicationController
   def create
       @rh = Rh.new(params[:rh])
       render :action => :new unless @rh.save
+      @rhs = Rh.all
       
   end
 
@@ -37,6 +38,7 @@ class RhsController < ApplicationController
   def destroy
       @rh = Rh.find(params[:id])
       @rh.destroy
+      @rhs = Rh.all
      
   end  
 end

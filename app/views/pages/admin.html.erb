@@ -1,14 +1,16 @@
 <div id='admin' class="page-header">
-  <h3>Administración </h3>
+  <h1 class="fondo">Administración </h3>
 </div>
 
 <div id='tab' class="well">
 
-    <table id='tab'  class="table table-striped">
+    <table id='tab'  class="table table-hover">
       <thead>
         <tr>
           <th>Maestra</th>
+         
           <th>Descripción</th>
+          <th><%= link_to image_tag("Inicio.png "), root_path, :class => 'brand' %></th>
         </tr>
       </thead>
 
@@ -16,34 +18,42 @@
          <tr>
              <td><%= link_to "Usuarios", users_path %></td>
              <td> Administración de los usuarios del Sistema</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Responsables", responsibles_path %></td>
              <td> Responsables de ñas areas del Sena</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Roles", roles_path %></td>
              <td>Roles</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Rhs", rhs_path %></td>
              <td>Equipos </td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Tipos Documentos", documents_path %></td>
              <td>Tipos Documentos</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Sugerencias", suggestions_path %></td>
              <td>Sugerencias</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Areas", areas_path %></td>
              <td>Areas</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Registros", records_path %></td>
              <td>Registros</td>
+             <td></td>
          </tr>
       </tbody>
 

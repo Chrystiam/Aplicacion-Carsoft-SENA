@@ -218,10 +218,10 @@ margin-top: -10px;
 #admin,#admin1{
   margin-top: -40px;
 }
-
-
-
-
+#admin2{
+    margin-top: -40px;
+    
+}
 
 table.jCalendar {
   border: 1px solid #000;
@@ -356,11 +356,18 @@ div.dp-popup td.disabled {
   margin-left: 1100px;
 
 }
+#admi{
+   margin-top: 50px;
+}
 
-th,tr.fondo{
+th,tr,td.fondo{
   background: #FFFFFF  ;
 
 }
+h1.fondo{
+  color: #FFFFFF;
+}
+
 
 input#totalregs{
   box-shadow: 0 0 5px rgba(252, 115, 35, 1); 

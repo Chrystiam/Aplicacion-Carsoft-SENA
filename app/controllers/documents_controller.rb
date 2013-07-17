@@ -26,6 +26,7 @@ class DocumentsController < ApplicationController
   def create
       @document = Document.new(params[:document])
       render :action => :new unless @document.save
+      @documents = Document.all
   end
 
   def update
@@ -36,6 +37,7 @@ class DocumentsController < ApplicationController
   def destroy
       @document = Document.find(params[:id])
       @document.destroy
+      @documents = Document.all
   end
   
 end

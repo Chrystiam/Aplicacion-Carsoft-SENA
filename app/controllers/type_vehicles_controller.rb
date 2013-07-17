@@ -2,7 +2,7 @@ class TypeVehiclesController < ApplicationController
    before_filter :require_login
   def index
       if params[:registro] == nil or params[:registro] <= '0' then 
-        params[:registro] = 2 
+        params[:registro] = 5 
     end
     @type_vehicles = TypeVehicle.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
@@ -26,6 +26,7 @@ class TypeVehiclesController < ApplicationController
   def create
       @type_vehicle = TypeVehicle.new(params[:type_vehicle ])
       render :action => :new unless @type_vehicle.save
+      @type_vehicles = TypeVehicle.all
       
   end
 
@@ -37,6 +38,7 @@ class TypeVehiclesController < ApplicationController
   def destroy
       @type_vehicle = TypeVehicle.find(params[:id])
       @type_vehicle.destroy
+      @type_vehicles = TypeVehicle.all
      
   end  
 end

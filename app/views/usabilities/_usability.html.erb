@@ -1,0 +1,11 @@
+<tr id=<%= "usability_#{usability.id}" %>>
+    <td><%= link_to usability.id, edit_usability_path(usability), :remote => true %></td>
+    <td><%= usability.name %></td>
+    <td><%= usability.initials %></td>
+    <td>
+        <%= link_to  image_tag('mostrar.png'), usability,     :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_usability_path(usability),  :remote => true,
+          :class => 'btn btn-mini'%>
+    </td>
+</tr>
+

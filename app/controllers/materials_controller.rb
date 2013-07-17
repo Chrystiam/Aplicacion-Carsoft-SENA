@@ -3,7 +3,7 @@ class MaterialsController < ApplicationController
    before_filter :find_user_materials
   def index
     if params[:registro] == nil or params[:registro] <= '0' then 
-        params[:registro] = 2 
+        params[:registro] = 5 
     end
     @materials = @user.material.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
@@ -28,6 +28,7 @@ class MaterialsController < ApplicationController
       @material = @user.material.new(params[:material])
       render :action => :new unless @material.save
       Record.create(:material_id => @material.id)
+      @materials = Material.all
   end
 
   def update
@@ -38,6 +39,7 @@ class MaterialsController < ApplicationController
   def destroy
       @material = Material.find(params[:id])
       @material.destroy
+      @materials = Material.all
   end
 
    private

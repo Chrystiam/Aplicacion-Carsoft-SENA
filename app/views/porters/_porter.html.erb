@@ -4,7 +4,7 @@
     <td><%= porter.surname %></td>
     <td><%= porter.address %></td>
     <td><%= porter.phone %></td>
-    <td><%= porter.turn_id %></td>
+    <td><%= porter.turn.day %></td>
     <td>
         <%= link_to  image_tag('mostrar.png'), porter, :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_porter_path(porter),  :remote => true, :class => 'btn btn-mini'%>

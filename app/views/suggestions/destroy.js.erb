@@ -1,1 +1,2 @@
 $("table tr#suggestion_<%= @suggestion.id %>").remove();
+$("input#totalregs").attr('value','<%= @suggestions.count %>');

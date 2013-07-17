@@ -27,6 +27,7 @@ class AreasController < ApplicationController
   def create
       @area = Area.new(params[:area])
       render :action => :new unless @area.save
+      @areas = Area.all
       
   end
 
@@ -38,6 +39,7 @@ class AreasController < ApplicationController
   def destroy
       @area = Area.find(params[:id])
       @area.destroy
+      @areas = Area.all
      
   end  
 end

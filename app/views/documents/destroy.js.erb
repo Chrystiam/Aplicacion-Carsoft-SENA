@@ -1,1 +1,2 @@
 $("table tr#document_<%= @document.id %>").remove();
+$("input#totalregs").attr('value','<%= @documents.count %>');

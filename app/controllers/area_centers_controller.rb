@@ -7,8 +7,11 @@ class AreaCentersController < ApplicationController
    if params[:registro] == nil or params[:registro] <= '0' then 
             params[:registro] = 4
     end
-     @area_centers = AreaCenter.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
-  end
+     @area_centers = @responsible.area_center.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @area_centers }
+    end
 
   def show
   end
@@ -37,6 +40,7 @@ class AreaCentersController < ApplicationController
   private
   def find_area_center
       @area_center = AreaCenter.find(params[:id]) if params[:id]
+
   end
 
   private
@@ -44,5 +48,6 @@ class AreaCentersController < ApplicationController
   def find_responsible_area_centers
      @responsible = Responsible.find(params[:responsible_id])
      @area_center = AreaCenter.find(params[:id]) if params[:id]
-  end  
+  end
+
 end

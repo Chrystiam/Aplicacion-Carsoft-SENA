@@ -27,6 +27,7 @@ class VehiclesController < ApplicationController
       @vehicle = @user.vehicle.build(params[:vehicle])
       render :action => :new unless @vehicle.save
       Record.create(:vehicle_id => @vehicle.id)
+      @vehicles = Vehicle.all 
   end
 
   def update
@@ -35,6 +36,7 @@ class VehiclesController < ApplicationController
 
   def destroy
       @vehicle.destroy
+      @vehicles = Vehicle.all 
   end 
 
   private

@@ -4,7 +4,7 @@
     <td><%= vehicle.color %></td>
     <td><%= vehicle.brand %></td>
     <td><%= vehicle.model %></td>
-    <td><%= vehicle.type_vehicle.name %></td>
+    <td><%= vehicle.type_vehicle_id %></td>
     <td>
         <%= link_to  image_tag('mostrar.png'), user_vehicle_path(@user, vehicle),     :remote => true, :rel => "tooltip", :title => "Mostrar", :class => 'btn btn-mini' %>
         <%= link_to image_tag('editar1.png'), edit_user_vehicle_path(@user, vehicle),  :remote => true, :rel => "tooltip", :title => "Editar",:class => 'btn btn-mini'%>

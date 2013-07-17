@@ -34,6 +34,7 @@ before_filter :require_login, :except  => [ :new, :create ]
   def create
       @suggestion = Suggestion.new(params[:suggestion])
       render :action => :new unless @suggestion.save
+      @suggestions = Suggestion.all
       
   end
 
@@ -45,6 +46,7 @@ before_filter :require_login, :except  => [ :new, :create ]
   def destroy
       @suggestion = Suggestion.find(params[:id])
       @suggestion.destroy
+      @suggestions = Suggestion.all
      
   end  
 end

@@ -1,2 +1,2 @@
 $("table tr#vehicle_<%= @vehicle.id %>").remove();
-$("p#total_regs").text('<%= @vehicles.count %>');
+$("input#totalregs").attr('value','<%=  @vehicles.count %>');

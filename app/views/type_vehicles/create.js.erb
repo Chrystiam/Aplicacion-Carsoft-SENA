@@ -1,2 +1,3 @@
 $('table tbody').append("<%= escape_javascript(render @type_vehicle) %>")
+$("input#totalregs").attr('value','<%= @type_vehicles.count %>');
 $.lazybox.close()

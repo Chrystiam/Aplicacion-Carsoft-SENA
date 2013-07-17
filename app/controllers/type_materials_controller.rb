@@ -2,7 +2,7 @@ class TypeMaterialsController < ApplicationController
    before_filter :require_login
   def index
       if params[:registro] == nil or params[:registro] <= '0' then 
-        params[:registro] = 2 
+        params[:registro] = 5 
     end
     @type_materials = TypeMaterial.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
 
@@ -26,6 +26,7 @@ class TypeMaterialsController < ApplicationController
   def create
       @type_material = TypeMaterial.new(params[:type_material ])
       render :action => :new unless @type_material.save
+      @type_materials = TypeMaterial.all
       
   end
 
@@ -37,6 +38,7 @@ class TypeMaterialsController < ApplicationController
   def destroy
       @type_material = TypeMaterial.find(params[:id])
       @type_material.destroy
+      @type_materials = TypeMaterial.all
      
   end  
 end

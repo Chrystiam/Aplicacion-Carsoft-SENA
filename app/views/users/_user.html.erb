@@ -6,8 +6,8 @@
     <td><%= user.phone %></td>
     <td><%= user.movil %></td>
     <td><%= user.center_id %></td>
+     <td> <%= link_to  image_tag('mostrar.png'), user,     :remote => true, :class => 'btn btn-mini' %></td>
      <td>
-        <%= link_to  image_tag('mostrar.png'), user,     :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('editar1.png', :title => "Editar Equipos"), edit_user_path(user),  :remote => true,
           :class => 'btn btn-mini'%>
           <%= link_to image_tag('glyphicons_005_car.png'), user_vehicles_path(user), :class => 'btn btn-mini', :rel => "tooltip", :title => "Registrar Vehiculos" %>

@@ -28,6 +28,7 @@ class ModifyUsersController < ApplicationController
   def create
       @modify_user = @user.modify_user.new(params[:modify_user])
       render :action => :new unless @modify_user.save
+      @modify_users = ModifyUser.all
   end
 
   def update
@@ -38,6 +39,7 @@ class ModifyUsersController < ApplicationController
   def destroy
       @modify_user = ModifyUser.find(params[:id])
       @modify_user.destroy
+      @modify_users = ModifyUser.all
   end
 
   private

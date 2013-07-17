@@ -1,14 +1,15 @@
 <div id='admin' class="page-header">
-  <h3>Administración-2 </h3>
+  <h1 class="fondo">Administración-2 </h3>
 </div>
 
 <div id='tab' class="well">
 
-    <table id='tab'  class="table table-striped">
+    <table id='tab'  class="table table-hover">
       <thead>
         <tr>
           <th>Maestra</th>
           <th>Descripción</th>
+           <th><%= link_to image_tag("Inicio.png "), root_path, :class => 'brand' %></th>
         </tr>
       </thead>
 
@@ -16,39 +17,48 @@
          <tr>
              <td><%= link_to "Autorizaciones", authorizations_path %></td>
              <td>Autorizaciones</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Estacionamientos", parkings_path %></td>
              <td>Estacionamientos</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Turnos", turns_path %></td>
              <td>Turnos</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Guardas", porters_path %></td>
              <td>Guardas</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Tipo Materiales", type_materials_path %></td>
              <td>Tipo Materiales</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Tipo Usuario", type_users_path %></td>
              <td>Tipo Usuario</td>
+             <td></td>
          </tr>
          <tr>
              <td><%= link_to "Tipo Vehiculo", type_vehicles_path %></td>
              <td>Tipo Vehiculo</td>
+             <td></td>
          </tr>
           <tr>
              <td><%= link_to "Usabilidades", usabilities_path %></td>
              <td>Usabilidad Autorizacion</td>
+             <td></td>
          </tr>
 
             <tr>
              <td><%= link_to "Destino", destinations_path %></td>
              <td>Destino Autorizacion</td>
+             <td></td>
          </tr>
 
       </tbody>
