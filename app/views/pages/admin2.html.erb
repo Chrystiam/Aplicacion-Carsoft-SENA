@@ -9,56 +9,48 @@
         <tr>
           <th>Maestra</th>
           <th>Descripción</th>
-           <th><%= link_to image_tag("Inicio.png "), root_path, :class => 'brand' %></th>
         </tr>
       </thead>
 
       <tbody>
          <tr>
-             <td><%= link_to "Autorizaciones", authorizations_path %></td>
-             <td>Autorizaciones</td>
+             <td><%= link_to image_tag("ImagesAdmin/authorization.png"), authorizations_path, :rel => "tooltip", :title => "Autorizaciones"  %>&nbsp&nbsp<%= link_to "Autorizaciones", authorizations_path %></td>
+             <td>Permiso que se le da a una persona para poder sacar un elemento del complejo</td>
              <td></td>
          </tr>
          <tr>
-             <td><%= link_to "Estacionamientos", parkings_path %></td>
-             <td>Estacionamientos</td>
+             <td><%= link_to image_tag("ImagesAdmin/parking2.png"), parkings_path, :rel => "tooltip", :title => "Estacionamientos"  %>&nbsp&nbsp<%= link_to "Estacionamientos", parkings_path %></td>
+             <td>Particionamiento de la zona de los parqueaderos</td>
              <td></td>
          </tr>
          <tr>
-             <td><%= link_to "Turnos", turns_path %></td>
-             <td>Turnos</td>
-             <td></td>
+             <td><%= link_to image_tag("ImagesAdmin/turn.png"), turns_path, :rel => "tooltip", :title => "Turnos"  %>&nbsp&nbsp<%= link_to "Turnos", turns_path %></td>
+             <td>Turnos de los guradas que prestan servicios en el complejo</td>
          </tr>
          <tr>
-             <td><%= link_to "Guardas", porters_path %></td>
-             <td>Guardas</td>
-             <td></td>
+            <td><%= link_to image_tag("ImagesAdmin/guard.png"), porters_path, :rel => "tooltip", :title => "Porteros"  %>&nbsp&nbsp<%= link_to "Porteros", porters_path %></td>
+             <td>Portero o Guarda encargado de los procesos de control dentro de la institución</td>
          </tr>
          <tr>
-             <td><%= link_to "Tipo Materiales", type_materials_path %></td>
-             <td>Tipo Materiales</td>
-             <td></td>
+            <td><%= link_to image_tag("ImagesAdmin/TypeMaterial.png"), type_materials_path, :rel => "tooltip", :title => "Tipo Materiales"  %>&nbsp&nbsp<%= link_to "Tipos Materiales", type_materials_path %></td>
+             <td>Cada uno de los diferentes materiales con que puede ingresar una persona</td>
          </tr>
          <tr>
-             <td><%= link_to "Tipo Usuario", type_users_path %></td>
-             <td>Tipo Usuario</td>
-             <td></td>
+            <td><%= link_to image_tag("ImagesAdmin/TypeUser.png"), type_users_path, :rel => "tooltip", :title => "Tipo Usuarios"  %>&nbsp&nbsp<%= link_to "Tipo Usuarios", type_users_path %></td>
+             <td>Division de personas que no necesariamente estan en contacto en la aplicación</td>
          </tr>
          <tr>
-             <td><%= link_to "Tipo Vehiculo", type_vehicles_path %></td>
-             <td>Tipo Vehiculo</td>
-             <td></td>
+            <td><%= link_to image_tag("ImagesAdmin/TypeVehicle.png"), type_vehicles_path, :rel => "tooltip", :title => "Tipo Vehiculos"  %>&nbsp&nbsp<%= link_to "Tipo Vehiculos", type_vehicles_path %></td>
+             <td>Tipos de materiales con que puede ingresar una persona al Complejo</td>
          </tr>
           <tr>
-             <td><%= link_to "Usabilidades", usabilities_path %></td>
-             <td>Usabilidad Autorizacion</td>
-             <td></td>
+            <td><%= link_to image_tag("ImagesAdmin/Usabilities.png"), usabilities_path, :rel => "tooltip", :title => "Usabilidades"  %>&nbsp&nbsp<%= link_to "Usabilidades", type_materials_path %></td>             
+            <td>Razon por la cual se esta haciendo el translado del material</td>
          </tr>
 
             <tr>
-             <td><%= link_to "Destino", destinations_path %></td>
-             <td>Destino Autorizacion</td>
-             <td></td>
+             <td><%= link_to image_tag("ImagesAdmin/Destinations.png"), destinations_path, :rel => "tooltip", :title => "Destinos"  %>&nbsp&nbsp<%= link_to "Destinos", destinations_path %></td>
+             <td>Lugar final donde va a finalizar el material</td>
          </tr>
 
       </tbody>
