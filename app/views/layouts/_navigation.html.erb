@@ -6,6 +6,7 @@
       <% end %>
 
       <li><%= link_to('Registrarse', new_user_path,  :remote => true  ) %></li>
+      <li><%= link_to image_tag("Estadisticas"), admin3_path, :rel => "tooltip", :title => "Avanzar Pagina Administración 2" %></li>
       <li><%= link_to "Salir", :logout %></li>
       <li><%= truncate "#{current_user.name }" %></li>
    <% else %>

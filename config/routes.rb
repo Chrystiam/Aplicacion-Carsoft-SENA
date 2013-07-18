@@ -23,12 +23,10 @@ Carsoft::Application.routes.draw do
 
 
   resources :responsibles do
-    resources :area_centers 
+  resources :area_centers 
+  resources :centers 
   end
-
-  resources :area_centers do
-    resources :centers
-  end
+  
   
   get "activate" => 'activations#create'
   

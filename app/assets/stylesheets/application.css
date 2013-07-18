@@ -215,12 +215,15 @@ margin-top: -10px;
   margin-top: -20px;
 }
 
-#admin,#admin1{
+#admin1{
   margin-top: -40px;
 }
 #admin2{
     margin-top: -40px;
     
+}
+#admin{
+   margin-top: -47px;
 }
 
 table.jCalendar {
@@ -364,7 +367,7 @@ th,tr,td.fondo{
   background: #FFFFFF  ;
 
 }
-h1.fondo{
+h1,h3.fondo{
   color: #FFFFFF;
 }
 
